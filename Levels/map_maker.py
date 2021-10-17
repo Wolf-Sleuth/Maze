@@ -1,0 +1,243 @@
+import pygame
+import json
+import os
+import sys
+import tkinter as tk
+from functools import partial
+from pygame.locals import *
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+BLUE = (0, 0, 255)
+RED = (200, 30, 30)
+
+
+def main():
+    window = tk.Tk()
+    button1 = tk.Button(window, text="Pick Map", command=partial(option, window))
+    button2 = tk.Button(window, text="Quit", command=end)
+    button1.pack()
+    button2.pack()
+    window.mainloop()
+
+def end():
+    sys.exit()
+
+def option(window):
+    window.destroy()
+    window = tk.Tk()
+    with open(os.path.join("Levels", "meta.json"), "r") as metaMap:
+        metaMap = json.loads(metaMap.read())
+        k = 0
+        c = 0
+        for i in metaMap["levels"]:
+            k += 1
+            c = 0
+            for j in i:
+                c += 1
+                frame = tk.Frame(
+                    master=window,
+                    relief=tk.RAISED,
+                    borderwidth=1
+                    )
+                frame.grid(row=k, column=c, padx=5, pady=5)
+                if j[0] != "x":
+                    Button = tk.Button(master=frame, text=f"{str(j)}", command=partial(edit, j, window))
+                else:
+                    Button = tk.Button(master=frame, text=f"", command=partial(create, j, "null", window))
+                Button.pack()
+                if k == 1 and j[0] != "x":
+                    frame = tk.Frame(master=window, relief=tk.RAISED, borderwidth=1)
+                    frame.grid(row=0, column=c, padx=5, pady=5)
+                    Button = tk.Button(master=frame, text="up", command=partial(create, j, "up", window))
+                    Button.pack()
+                if c == 1 and j[0] != "x":
+                    frame = tk.Frame(master=window, relief=tk.RAISED, borderwidth=1)
+                    frame.grid(row=k, column=0, padx=5, pady=5)
+                    Button = tk.Button(master=frame, text="left", command=partial(create, j, "left", window))
+                    Button.pack()
+                if i == metaMap["levels"][len(metaMap["levels"])-1] and j[0] != "x":
+                    frame = tk.Frame(master=window, relief=tk.RAISED, borderwidth=1)
+                    frame.grid(row=k+1, column=c, padx=5, pady=5)
+                    Button = tk.Button(master=frame, text="down", command=partial(create, j, "down", window))
+                    Button.pack()
+                if j == i[len(i)-1] and j[0] != "x":
+                    frame = tk.Frame(master=window, relief=tk.RAISED, borderwidth=1)
+                    frame.grid(row=k, column=c+1, padx=5, pady=5)
+                    Button = tk.Button(master=frame, text="right", command=partial(create, j, "right", window))
+                    Button.pack()
+    window.mainloop()
+
+def create(edge, direction, window):
+    arr = []
+    for i in range(10):
+        arr.append([])
+        for j in range(10):
+            arr[i].append("o")
+    data = {"Level":arr}
+
+    if direction == "null":
+        print("got here")
+        Map = edge[1:]
+        with open(os.path.join("Levels", f"level {Map}.json"), "w") as file:
+            json.dump(data, file)
+        with open(os.path.join("Levels", "meta.json"), "r") as file:
+            current = json.load(file)
+        levels = current["levels"]
+        for i in range(len(levels)):
+            for j in range(len(levels[i])):
+                if Map == levels[i][j][1:]:
+                    levels[i][j] = Map
+                    print(Map)
+        with open(os.path.join("Levels", "meta.json"), "w") as file:
+            Level = {"levels":levels}
+            json.dump(Level, file)
+
+
+    else:
+        info = edge.split(" ")
+
+        if direction == "left":
+            Map = (f"{int(info[0])-1} {info[1]}")
+            with open(os.path.join("Levels", f"level {Map}.json"), "w") as file:
+                json.dump(data, file)
+            with open(os.path.join("Levels", "meta.json"), "r") as file:
+                current = json.load("file")
+            levels = current["levels"]
+            coords = int(levels[0][0].split(" ")[1])
+            for i in levels:
+                if f"{int(info[0])-1} {coords}" == Map:
+                    i.insert(0, f"{Map}")
+                else:
+                    i.insert(0, f"x{int(info[0])-1} {coords}")
+                coords += 1
+            with open(os.path.join("Levels", "meta.json"), "w") as file:
+                Level = {"levels":levels}
+                json.dump(Level, file)
+
+        elif direction == "right":
+            Map = (f"{int(info[0])+1} {info[1]}")
+            with open(os.path.join("Levels", f"level {Map}.json"), "w") as file:
+                json.dump(data, file)
+            with open(os.path.join("Levels", "meta.json"), "r") as file:
+                current = json.load(file)
+            levels = current["levels"]
+            coords = int(levels[0][0].split(" ")[1])
+            for i in levels:
+                if f"{int(info[0])+1} {coords}" == Map:
+                    i.append(f"{Map}")
+                else:
+                    i.append(f"x{int(info[0])+1} {coords}")
+                coords += 1
+            with open(os.path.join("Levels", "meta.json"), "w") as file:
+                Level = {"levels":levels}
+                json.dump(Level, file)
+
+        elif direction == "down":
+            Map = (f"{info[0]} {int(info[1])+1}")
+            with open(os.path.join("Levels", f"level {Map}.json", "w")) as file:
+                json.dump(data, file)
+            with open(os.path.join("Levels", "meta.json"), "r") as file:
+                current = json.load(file)
+            levels = current["levels"]
+            arr = []
+            coords = levels[0][0]
+            if coords[0] == "x":
+                coords = coords[1:]
+            coords = int(coords.split(" ")[0])
+            for i in range(len(levels[0])):
+                if coords == int(info[0]):
+                    arr.append(f"{Map}")
+                else:
+                    arr.append(f"x{coords} {int(info[1])+1}")
+                coords += 1
+            levels.append(arr)
+            with open(os.path.join("Levels", "meta.json"), "w") as file:
+                Level = {"levels":levels}
+                json.dump(Level, file)
+
+        elif direction == "up":
+            Map = (f"{info[0]} {int(info[1])-1}")
+            with open(os.path.join("Levels", f"level {Map}.json"), "w") as file:
+                json.dump(data, file)
+            with open(os.path.join("Levels", "meta.json"), "r") as file:
+                current = json.load(file)
+            levels = current["levels"]
+            arr = []
+            coords = levels[0][0]
+            if coords[0] == "x":
+                coords = coords[1:]
+            coords = int(coords.split(" ")[0])
+            for i in range(len(levels[0])):
+                if coords == int(info[0]):
+                    arr.append(f"{Map}")
+                    print("got here")
+                else:
+                    arr.append(f"x{coords} {int(info[1])-1}")
+                coords += 1
+            levels.insert(0, arr)
+            with open(os.path.join("Levels", "meta.json"), "w") as file:
+                Level = {"levels":levels}
+                json.dump(Level, file)
+
+
+    edit(Map, window)
+
+def edit(map, window):
+    window.destroy()
+    with open(os.path.join("Levels", f"level {map}.json"), "r") as file:
+        arr = json.load(file)
+        arr = arr["Level"]
+    pygame.init()
+    DISPLAYSURF = pygame.display.set_mode((1000, 1000))
+    cursor = [0, 0]
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+            if pygame.key.get_pressed()[K_ESCAPE]:
+                pygame.quit()
+                sys.exit()
+            if pygame.key.get_pressed()[K_DOWN]:
+                if cursor[1] < 10:
+                    cursor[1] += 1
+            elif pygame.key.get_pressed()[K_UP]:
+                if cursor[1] >= 0:
+                    cursor[1] -= 1
+            elif pygame.key.get_pressed()[K_LEFT]:
+                if cursor[0] >= 0:
+                    cursor[0] -= 1
+            elif pygame.key.get_pressed()[K_RIGHT]:
+                if cursor[0] < 10:
+                    cursor[0] += 1
+            elif pygame.key.get_pressed()[K_SPACE]:
+                if arr[cursor[1]][cursor[0]] == "x":
+                    arr[cursor[1]][cursor[0]] = "e"
+                elif arr[cursor[1]][cursor[0]] == "e":
+                    arr[cursor[1]][cursor[0]] = "o"
+                elif arr[cursor[1]][cursor[0]] == "o":
+                    arr[cursor[1]][cursor[0]] = "x"
+            elif pygame.key.get_pressed()[K_RETURN]:
+                with open(os.path.join("Levels", f"level {map}.json"), "w") as file:
+                    Level = {"Level":arr}
+                    json.dump(Level, file)
+                pygame.quit()
+                main()
+        
+        DISPLAYSURF.fill(WHITE)
+
+        for i in range(10):
+            for j in range(10):
+                if arr[j][i] == "x":
+                    pygame.draw.rect(DISPLAYSURF, BLACK, (i*100, j*100, 100, 100))
+                elif arr[j][i] == "e":
+                    pygame.draw.rect(DISPLAYSURF, RED, (i*100+25, j*100+25, 50, 50))
+        pygame.draw.rect(DISPLAYSURF, BLUE, (cursor[0]*100+45, cursor[1]*100+45, 10, 10))
+        
+        pygame.display.update()
+
+
+if __name__ == "__main__":
+    main()
