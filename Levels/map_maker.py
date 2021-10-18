@@ -11,6 +11,7 @@ BLACK = (0, 0, 0)
 BLUE = (0, 0, 255)
 RED = (200, 30, 30)
 
+objKey = {"o":"x", "x":"e", "e":"o"}
 
 def main():
     window = tk.Tk()
@@ -213,12 +214,13 @@ def edit(map, window):
                 if cursor[0] < 10:
                     cursor[0] += 1
             elif pygame.key.get_pressed()[K_SPACE]:
-                if arr[cursor[1]][cursor[0]] == "x":
-                    arr[cursor[1]][cursor[0]] = "e"
-                elif arr[cursor[1]][cursor[0]] == "e":
-                    arr[cursor[1]][cursor[0]] = "o"
-                elif arr[cursor[1]][cursor[0]] == "o":
-                    arr[cursor[1]][cursor[0]] = "x"
+                #if arr[cursor[1]][cursor[0]] == "x":
+                #    arr[cursor[1]][cursor[0]] = "e"
+                #elif arr[cursor[1]][cursor[0]] == "e":
+                #    arr[cursor[1]][cursor[0]] = "o"
+                #elif arr[cursor[1]][cursor[0]] == "o":
+                #    arr[cursor[1]][cursor[0]] = "x"
+                arr[cursor[1]][cursor[0]] = objKey[arr[cursor[1]][cursor[0]]]
             elif pygame.key.get_pressed()[K_RETURN]:
                 with open(os.path.join("Levels", f"level {map}.json"), "w") as file:
                     Level = {"Level":arr}
