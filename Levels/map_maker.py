@@ -11,7 +11,7 @@ BLACK = (0, 0, 0)
 BLUE = (0, 0, 255)
 RED = (200, 30, 30)
 
-objKey = {"o":"x", "x":"e", "e":"o"}
+objKey = {"x":"o", "o":"e", "e":"x"}
 
 def main():
     window = tk.Tk()
