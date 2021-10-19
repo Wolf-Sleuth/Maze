@@ -5,6 +5,9 @@ import sys
 import tkinter as tk
 from functools import partial
 from pygame.locals import *
+import logging
+
+logging.basicConfig(level=logging.DEBUG, filename="errorlog.txt", format="%(asctime)s : %(levelname)s : %(message)s")
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -219,12 +222,6 @@ def edit(map, window):
                 if cursor[0] < 9:
                     cursor[0] += 1
             elif pygame.key.get_pressed()[K_SPACE]:
-                #if arr[cursor[1]][cursor[0]] == "x":
-                #    arr[cursor[1]][cursor[0]] = "e"
-                #elif arr[cursor[1]][cursor[0]] == "e":
-                #    arr[cursor[1]][cursor[0]] = "o"
-                #elif arr[cursor[1]][cursor[0]] == "o":
-                #    arr[cursor[1]][cursor[0]] = "x"
                 arr[cursor[1]][cursor[0]] = objKey[arr[cursor[1]][cursor[0]]]
             elif pygame.key.get_pressed()[K_RETURN]:
                 with open(os.path.join("Levels", f"level {map}.json"), "w") as file:
@@ -297,6 +294,7 @@ def Doors(map):
                 colour = GREEN
             real_lines.append([colour, start_pos, end_pos])
             count += 1
+        level = None
     return real_lines
 
 def readLine(direction, count):
@@ -316,15 +314,15 @@ def readLine(direction, count):
 
 def read(level, direction):
     arr = []
-    if direction == "left":
+    if direction == "right":
         for i in level:
             arr.append(i[0])
-    elif direction == "right":
+    elif direction == "left":
         for i in level:
             arr.append(i[-1])
-    elif direction == "down":
-        arr = level[-1]
     elif direction == "up":
+        arr = level[-1]
+    elif direction == "down":
         arr = level[0]
     return arr
 
