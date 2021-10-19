@@ -5,11 +5,17 @@ import sys
 import tkinter as tk
 from functools import partial
 from pygame.locals import *
+import logging
+
+logging.basicConfig(level=logging.DEBUG, filename="errorlog.txt", format="%(asctime)s : %(levelname)s : %(message)s")
 
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 BLUE = (0, 0, 255)
 RED = (200, 30, 30)
+GREEN = (0, 255, 0)
+
+SCREEN_WIDTH, SCREEN_HEIGHT = 1000, 1000
 
 objKey = {"x":"o", "o":"e", "e":"x"}
 
@@ -190,8 +196,10 @@ def edit(map, window):
         arr = json.load(file)
         arr = arr["Level"]
     pygame.init()
-    DISPLAYSURF = pygame.display.set_mode((1000, 1000))
+    DISPLAYSURF = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     cursor = [0, 0]
+
+    doors = Doors(map)
 
     while True:
         for event in pygame.event.get():
@@ -202,24 +210,18 @@ def edit(map, window):
                 pygame.quit()
                 sys.exit()
             if pygame.key.get_pressed()[K_DOWN]:
-                if cursor[1] < 10:
+                if cursor[1] < 9:
                     cursor[1] += 1
             elif pygame.key.get_pressed()[K_UP]:
-                if cursor[1] >= 0:
+                if cursor[1] > 0:
                     cursor[1] -= 1
             elif pygame.key.get_pressed()[K_LEFT]:
-                if cursor[0] >= 0:
+                if cursor[0] > 0:
                     cursor[0] -= 1
             elif pygame.key.get_pressed()[K_RIGHT]:
-                if cursor[0] < 10:
+                if cursor[0] < 9:
                     cursor[0] += 1
             elif pygame.key.get_pressed()[K_SPACE]:
-                #if arr[cursor[1]][cursor[0]] == "x":
-                #    arr[cursor[1]][cursor[0]] = "e"
-                #elif arr[cursor[1]][cursor[0]] == "e":
-                #    arr[cursor[1]][cursor[0]] = "o"
-                #elif arr[cursor[1]][cursor[0]] == "o":
-                #    arr[cursor[1]][cursor[0]] = "x"
                 arr[cursor[1]][cursor[0]] = objKey[arr[cursor[1]][cursor[0]]]
             elif pygame.key.get_pressed()[K_RETURN]:
                 with open(os.path.join("Levels", f"level {map}.json"), "w") as file:
@@ -230,6 +232,8 @@ def edit(map, window):
         
         DISPLAYSURF.fill(WHITE)
 
+
+
         for i in range(10):
             for j in range(10):
                 if arr[j][i] == "x":
@@ -237,8 +241,90 @@ def edit(map, window):
                 elif arr[j][i] == "e":
                     pygame.draw.rect(DISPLAYSURF, RED, (i*100+25, j*100+25, 50, 50))
         pygame.draw.rect(DISPLAYSURF, BLUE, (cursor[0]*100+45, cursor[1]*100+45, 10, 10))
-        
+
+        for i in doors:
+            pygame.draw.line(DISPLAYSURF, i[0], i[1], i[2], 10)
+
         pygame.display.update()
+
+
+def Doors(map):
+    with open(os.path.join("Levels", "meta.json"), "r") as file:
+        meta = json.load(file)
+    levels = meta["levels"]
+    coords = [None, None]
+    for i in range(len(levels)):
+        for j in range(len(levels[i])):
+            if levels[i][j] == map:
+                coords = [i, j]
+    # Refers to the levels with the doors in them
+    lines = []
+    # Refers to the actual lines that will be drawn
+    real_lines = []
+    try:    
+        if bool(levels[coords[0]-1][coords[1]]) == True and levels[coords[0]-1][coords[1]][0] != "x":
+            lines.append(["up", coords[0]-1, coords[1]])
+    except IndexError:
+        pass
+    try:
+        if bool(levels[coords[0]+1][coords[1]]) == True and levels[coords[0]+1][coords[1]][0] != "x":
+            lines.append(["down", coords[0]+1, coords[1]])
+    except IndexError:
+        pass    
+    try:    
+        if bool(levels[coords[0]][coords[1]-1]) == True and levels[coords[0]][coords[1]-1][0] != "x":
+            lines.append(["left", coords[0], coords[1]-1])
+    except IndexError:
+        pass
+    try:
+        if bool(levels[coords[0]][coords[1]+1]) == True and levels[coords[0]][coords[1]+1][0] != "x":
+            lines.append(["right", coords[0], coords[1]+1])
+    except IndexError:
+        pass
+    for i in lines:
+        with open(os.path.join("Levels", f"level {levels[i[1]][i[2]]}.json"), "r") as file:
+            level = json.load(file)
+        line = read(level["Level"], i[0])
+        count = 0
+        for item in line:
+            start_pos, end_pos = readLine(i[0], count)
+            if item == "x":
+                colour = BLACK
+            else:
+                colour = GREEN
+            real_lines.append([colour, start_pos, end_pos])
+            count += 1
+        level = None
+    return real_lines
+
+def readLine(direction, count):
+    if direction == "up":
+        start_pos = (count*100, 0)
+        end_pos = ((count+1)*100, 0)
+    elif direction == "down":
+        start_pos = (count*100, SCREEN_HEIGHT)
+        end_pos = ((count+1)*100, SCREEN_HEIGHT)
+    elif direction == "left":
+        start_pos = (0, count*100)
+        end_pos = (0, (count+1)*100)
+    elif direction == "right":
+        start_pos = (SCREEN_WIDTH, count*100)
+        end_pos = (SCREEN_WIDTH, (count+1)*100)
+    return start_pos, end_pos
+
+def read(level, direction):
+    arr = []
+    if direction == "right":
+        for i in level:
+            arr.append(i[0])
+    elif direction == "left":
+        for i in level:
+            arr.append(i[-1])
+    elif direction == "up":
+        arr = level[-1]
+    elif direction == "down":
+        arr = level[0]
+    return arr
 
 
 if __name__ == "__main__":
