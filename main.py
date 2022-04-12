@@ -4,7 +4,8 @@ import sys
 import os
 import json
 import logging
-logging.basicConfig(level=logging.INFO)
+
+logging.basicConfig(level=logging.DEBUG, filename="errorlog.txt", format="%(asctime)s : %(levelname)s : %(message)s")
 
 # Constants
 SCREEN_WIDTH = 1000

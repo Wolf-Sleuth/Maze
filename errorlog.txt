@@ -1,72 +1,225 @@
-2021-10-19 17:52:56,979 : DEBUG : 0 0
-2021-10-19 17:52:56,981 : DEBUG : up, level 0 -1.json
-2021-10-19 17:52:56,982 : DEBUG : down, level 0 1.json
-2021-10-19 17:52:56,983 : DEBUG : left, level -1 0.json
-2021-10-19 17:52:56,984 : DEBUG : right, level 1 0.json
-2021-10-19 17:55:42,810 : DEBUG : 0 0
-2021-10-19 17:55:42,812 : DEBUG : up, level 0 -1.json
-{'Level': [
-['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'],
-['x', 'x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'],
-['x', 'o', 'x', 'o', 'o', 'o', 'o', 'x', 'o', 'x'],
-['x', 'o', 'o', 'x', 'o', 'o', 'x', 'o', 'o', 'x'],
-['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['o', 'o', 'o', 'o', 'x', 'o', 'o', 'o', 'o', 'o'],
-['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x']]}
-2021-10-19 17:55:42,813 : DEBUG : down, level 0 1.json
-{'Level': [
-['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'],
-['x', 'o', 'o', 'o', 'x', 'o', 'o', 'o', 'o', 'x'],
-['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
-2021-10-19 17:55:42,814 : DEBUG : left, level -1 0.json
-{'Level': [
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
-['x', 'o', 'o', 'o', 'o', 'e', 'o', 'o', 'o', 'o'],
-['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
-2021-10-19 17:55:42,814 : DEBUG : right, level 1 0.json
-{'Level': [
-['x', 'x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x'],
-['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'],
-['o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x', 'x'],
-['o', 'o', 'o', 'o', 'o', 'o', 'x', 'x', 'x', 'x'],
-['o', 'o', 'o', 'o', 'o', 'x', 'x', 'x', 'x', 'x'],
-['o', 'o', 'o', 'o', 'x', 'x', 'x', 'x', 'x', 'x'],
-['o', 'o', 'o', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
-['o', 'o', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
-['o', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
-['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
-2021-10-19 18:00:23,849 : DEBUG : 0 0
-2021-10-19 18:00:23,851 : DEBUG : up, level 0 -1.json
-{'Level': [['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'], ['x', 'x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'], ['x', 'o', 'x', 'o', 'o', 'o', 'o', 'x', 'o', 'x'], ['x', 'o', 'o', 'x', 'o', 'o', 'x', 'o', 'o', 'x'], ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['o', 'o', 'o', 'o', 'x', 'o', 'o', 'o', 'o', 'o'], ['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x']]}
-2021-10-19 18:00:23,851 : DEBUG : down, level 0 1.json
-{'Level': [['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'x', 'o', 'o', 'o', 'o', 'x'], ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
-2021-10-19 18:00:23,852 : DEBUG : left, level -1 0.json
-{'Level': [['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'e', 'o', 'o', 'o', 'o'], ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
-2021-10-19 18:00:23,854 : DEBUG : right, level 1 0.json
-{'Level': [['x', 'x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x'], ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'], ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x', 'x'], ['o', 'o', 'o', 'o', 'o', 'o', 'x', 'x', 'x', 'x'], ['o', 'o', 'o', 'o', 'o', 'x', 'x', 'x', 'x', 'x'], ['o', 'o', 'o', 'o', 'x', 'x', 'x', 'x', 'x', 'x'], ['o', 'o', 'o', 'x', 'x', 'x', 'x', 'x', 'x', 'x'], ['o', 'o', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'], ['o', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'], ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
-2021-10-19 18:06:38,639 : DEBUG : 0 0
-2021-10-19 18:06:38,653 : DEBUG : up, level 0 -1.json
-{'Level': [['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'], ['x', 'x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'], ['x', 'o', 'x', 'o', 'o', 'o', 'o', 'x', 'o', 'x'], ['x', 'o', 'o', 'x', 'o', 'o', 'x', 'o', 'o', 'x'], ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['o', 'o', 'o', 'o', 'x', 'o', 'o', 'o', 'o', 'o'], ['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x']]}
-2021-10-19 18:06:38,653 : DEBUG : down, level 0 1.json
-{'Level': [['x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'x', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x'], ['x', 'o', 'o', 'o', 'x', 'o', 'o', 'o', 'o', 'x'], ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
-2021-10-19 18:06:38,664 : DEBUG : left, level -1 0.json
-{'Level': [['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'], ['x', 'o', 'o', 'o', 'o', 'e', 'o', 'o', 'o', 'o'], ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
-2021-10-19 18:06:38,666 : DEBUG : right, level 1 0.json
-{'Level': [['x', 'x', 'x', 'x', 'x', 'x', 'x', 'o', 'o', 'x'], ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x'], ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'x', 'x', 'x'], ['o', 'o', 'o', 'o', 'o', 'o', 'x', 'x', 'x', 'x'], ['o', 'o', 'o', 'o', 'o', 'x', 'x', 'x', 'x', 'x'], ['o', 'o', 'o', 'o', 'x', 'x', 'x', 'x', 'x', 'x'], ['o', 'o', 'o', 'x', 'x', 'x', 'x', 'x', 'x', 'x'], ['o', 'o', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'], ['o', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'], ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x']]}
+2021-10-19 18:33:40,082 : DEBUG : Direction Reached
+2021-10-19 18:33:40,432 : DEBUG : Direction Reached
+2021-10-19 18:33:41,081 : DEBUG : Direction Reached
+2021-10-19 18:33:45,687 : DEBUG : Direction Reached
+2021-10-19 18:33:46,026 : DEBUG : Direction Reached
+2021-10-19 18:33:46,688 : DEBUG : Direction Reached
+2021-10-19 18:33:48,191 : DEBUG : Direction Reached
+2021-10-19 18:33:50,796 : DEBUG : Direction Reached
+2021-10-19 18:33:51,175 : DEBUG : Direction Reached
+2021-10-19 18:33:51,645 : DEBUG : Direction Reached
+2021-10-19 18:33:51,777 : DEBUG : Direction Reached
+2021-10-19 18:33:51,793 : DEBUG : Direction Reached
+2021-10-19 18:33:51,894 : DEBUG : Direction Reached
+2021-10-19 18:33:51,910 : DEBUG : Direction Reached
+2021-10-19 18:33:52,010 : DEBUG : Direction Reached
+2021-10-19 18:33:52,026 : DEBUG : Direction Reached
+2021-10-19 18:33:52,121 : DEBUG : Direction Reached
+2021-10-19 18:33:52,138 : DEBUG : Direction Reached
+2021-10-19 18:33:52,234 : DEBUG : Direction Reached
+2021-10-19 18:33:52,251 : DEBUG : Direction Reached
+2021-10-19 18:33:52,350 : DEBUG : Direction Reached
+2021-10-19 18:33:52,366 : DEBUG : Direction Reached
+2021-10-19 18:33:52,463 : DEBUG : Direction Reached
+2021-10-19 18:33:52,480 : DEBUG : Direction Reached
+2021-10-19 18:33:52,578 : DEBUG : Direction Reached
+2021-10-19 18:33:53,213 : DEBUG : Direction Reached
+2021-10-19 18:33:55,464 : DEBUG : Direction Reached
+2021-10-19 18:33:58,533 : DEBUG : Direction Reached
+2021-10-19 18:33:59,122 : DEBUG : Direction Reached
+2021-10-19 18:34:00,402 : DEBUG : Direction Reached
+2021-10-19 18:34:00,752 : DEBUG : Direction Reached
+2021-10-19 18:34:01,141 : DEBUG : Direction Reached
+2021-10-19 18:34:30,703 : DEBUG : Direction Reached
+2021-10-19 18:34:33,689 : DEBUG : Direction Reached
+2021-10-19 18:34:35,874 : DEBUG : Direction Reached
+2021-10-19 18:34:37,689 : DEBUG : Direction Reached
+2021-10-19 18:34:39,808 : DEBUG : Direction Reached
+2021-10-19 18:34:50,119 : DEBUG : Direction Reached
+2021-10-19 18:34:52,693 : DEBUG : Direction Reached
+2021-10-19 18:34:53,454 : DEBUG : Direction Reached
+2021-10-19 18:34:56,037 : DEBUG : Direction Reached
+2021-10-19 18:35:01,716 : DEBUG : Direction Reached
+2021-10-19 18:35:02,064 : DEBUG : Direction Reached
+2021-10-19 18:35:02,524 : DEBUG : Direction Reached
+2021-10-19 18:35:24,670 : DEBUG : Direction Reached
+2021-10-19 18:35:32,127 : DEBUG : Direction Reached
+2021-10-19 18:35:34,407 : DEBUG : Direction Reached
+2021-10-19 18:35:35,830 : DEBUG : Direction Reached
+2021-10-19 18:35:36,792 : DEBUG : Direction Reached
+2021-10-19 18:35:40,452 : DEBUG : Direction Reached
+2021-10-19 18:35:44,210 : DEBUG : Direction Reached
+2021-10-19 18:35:46,408 : DEBUG : Direction Reached
+2021-10-19 18:35:48,728 : DEBUG : Direction Reached
+2021-10-19 18:35:52,481 : DEBUG : Direction Reached
+2021-10-19 18:35:54,427 : DEBUG : Direction Reached
+2021-10-19 18:35:54,687 : DEBUG : Direction Reached
+2021-10-19 18:35:58,523 : DEBUG : Direction Reached
+2021-10-19 18:36:02,324 : DEBUG : Direction Reached
+2021-10-19 18:36:04,860 : DEBUG : Direction Reached
+2021-10-19 18:36:07,417 : DEBUG : Direction Reached
+2021-10-19 18:36:13,302 : DEBUG : Direction Reached
+2021-10-19 18:36:16,338 : DEBUG : Direction Reached
+2021-10-19 18:36:18,807 : DEBUG : Direction Reached
+2021-10-19 18:36:19,006 : DEBUG : Direction Reached
+2021-10-19 18:36:20,092 : DEBUG : Direction Reached
+2021-10-19 18:36:20,325 : DEBUG : Direction Reached
+2021-10-19 18:36:20,566 : DEBUG : Direction Reached
+2021-10-19 18:36:23,294 : DEBUG : Direction Reached
+2021-10-19 18:36:25,831 : DEBUG : Direction Reached
+2021-10-19 18:36:27,284 : DEBUG : Direction Reached
+2021-10-19 18:36:28,417 : DEBUG : Direction Reached
+2021-10-19 18:36:33,026 : DEBUG : Direction Reached
+2021-10-19 18:36:33,373 : DEBUG : Direction Reached
+2021-10-19 18:36:33,839 : DEBUG : Direction Reached
+2021-10-19 18:36:35,356 : DEBUG : Direction Reached
+2021-10-19 18:36:35,567 : DEBUG : Direction Reached
+2021-10-19 18:36:36,694 : DEBUG : Direction Reached
+2021-10-19 18:36:40,696 : DEBUG : Direction Reached
+2021-10-19 18:36:41,038 : DEBUG : Direction Reached
+2021-10-19 18:36:41,513 : DEBUG : Direction Reached
+2021-10-19 18:36:44,442 : DEBUG : Direction Reached
+2021-10-19 18:36:46,001 : DEBUG : Direction Reached
+2021-10-19 18:36:48,237 : DEBUG : Direction Reached
+2021-10-19 18:36:48,609 : DEBUG : Direction Reached
+2021-10-19 18:36:48,626 : DEBUG : Direction Reached
+2021-10-19 18:36:48,722 : DEBUG : Direction Reached
+2021-10-19 18:36:48,739 : DEBUG : Direction Reached
+2021-10-19 18:36:48,837 : DEBUG : Direction Reached
+2021-10-19 18:36:48,853 : DEBUG : Direction Reached
+2021-10-19 18:36:49,496 : DEBUG : Direction Reached
+2021-10-19 18:36:50,071 : DEBUG : Direction Reached
+2021-10-19 18:36:50,639 : DEBUG : Direction Reached
+2021-10-19 18:36:52,760 : DEBUG : Direction Reached
+2021-10-19 18:37:06,867 : DEBUG : Direction Reached
+2021-10-19 18:37:13,004 : DEBUG : Direction Reached
+2021-10-19 18:37:14,714 : DEBUG : Direction Reached
+2021-10-19 18:37:15,065 : DEBUG : Direction Reached
+2021-10-19 18:37:15,328 : DEBUG : Direction Reached
+2021-10-19 18:37:17,418 : DEBUG : Direction Reached
+2021-10-19 18:37:20,425 : DEBUG : Direction Reached
+2021-10-19 18:37:20,769 : DEBUG : Direction Reached
+2021-10-19 18:37:21,227 : DEBUG : Direction Reached
+2021-10-19 18:37:22,737 : DEBUG : Direction Reached
+2021-10-19 18:37:22,754 : DEBUG : Direction Reached
+2021-10-19 18:37:23,705 : DEBUG : Direction Reached
+2021-10-19 18:37:25,356 : DEBUG : Direction Reached
+2021-10-19 18:37:26,692 : DEBUG : Direction Reached
+2021-10-19 18:37:31,546 : DEBUG : Direction Reached
+2021-10-19 18:37:31,896 : DEBUG : Direction Reached
+2021-10-19 18:37:32,416 : DEBUG : Direction Reached
+2021-10-19 18:37:32,764 : DEBUG : Direction Reached
+2021-10-19 18:37:33,998 : DEBUG : Direction Reached
+2021-10-19 18:37:34,884 : DEBUG : Direction Reached
+2021-10-19 18:37:41,090 : DEBUG : Direction Reached
+2021-10-19 18:37:49,597 : DEBUG : Direction Reached
+2021-10-19 18:37:51,600 : DEBUG : Direction Reached
+2021-10-19 18:37:52,383 : DEBUG : Direction Reached
+2021-10-19 20:08:32,161 : DEBUG : Direction Reached
+2021-10-19 20:08:32,739 : DEBUG : Direction Reached
+2021-10-19 20:08:33,168 : DEBUG : Direction Reached
+2021-10-19 20:08:35,063 : DEBUG : Direction Reached
+2021-10-19 20:08:35,080 : DEBUG : Direction Reached
+2021-10-19 20:08:35,096 : DEBUG : Direction Reached
+2021-10-19 20:08:35,113 : DEBUG : Direction Reached
+2021-10-19 20:08:35,131 : DEBUG : Direction Reached
+2021-10-19 20:08:35,146 : DEBUG : Direction Reached
+2021-10-19 20:08:35,164 : DEBUG : Direction Reached
+2021-10-19 20:08:35,180 : DEBUG : Direction Reached
+2021-10-19 20:08:35,197 : DEBUG : Direction Reached
+2021-10-19 20:08:35,213 : DEBUG : Direction Reached
+2021-10-19 20:08:35,230 : DEBUG : Direction Reached
+2021-10-19 20:08:35,246 : DEBUG : Direction Reached
+2021-10-19 20:08:35,263 : DEBUG : Direction Reached
+2021-10-19 20:08:35,280 : DEBUG : Direction Reached
+2021-10-19 20:08:35,297 : DEBUG : Direction Reached
+2021-10-19 20:08:35,313 : DEBUG : Direction Reached
+2021-10-19 20:08:35,331 : DEBUG : Direction Reached
+2021-10-19 20:08:35,347 : DEBUG : Direction Reached
+2021-10-19 20:08:35,364 : DEBUG : Direction Reached
+2021-10-19 20:08:35,380 : DEBUG : Direction Reached
+2021-10-19 20:08:35,396 : DEBUG : Direction Reached
+2021-10-19 20:08:35,413 : DEBUG : Direction Reached
+2021-10-19 20:08:35,428 : DEBUG : Direction Reached
+2021-10-19 20:08:35,446 : DEBUG : Direction Reached
+2021-10-19 20:08:35,462 : DEBUG : Direction Reached
+2021-10-19 20:08:35,479 : DEBUG : Direction Reached
+2021-10-19 20:08:35,495 : DEBUG : Direction Reached
+2021-10-19 20:08:35,512 : DEBUG : Direction Reached
+2021-10-19 20:08:35,528 : DEBUG : Direction Reached
+2021-10-19 20:08:35,545 : DEBUG : Direction Reached
+2021-10-19 20:08:35,559 : DEBUG : Direction Reached
+2021-10-19 20:08:35,577 : DEBUG : Direction Reached
+2021-10-19 20:08:35,591 : DEBUG : Direction Reached
+2021-10-19 20:08:35,607 : DEBUG : Direction Reached
+2021-10-19 20:08:35,623 : DEBUG : Direction Reached
+2021-10-19 20:08:35,639 : DEBUG : Direction Reached
+2021-10-19 20:08:35,655 : DEBUG : Direction Reached
+2021-10-19 20:08:35,672 : DEBUG : Direction Reached
+2021-10-19 20:08:35,689 : DEBUG : Direction Reached
+2021-10-19 20:08:35,706 : DEBUG : Direction Reached
+2021-10-19 20:08:35,722 : DEBUG : Direction Reached
+2021-10-19 20:08:35,738 : DEBUG : Direction Reached
+2021-10-19 20:08:35,754 : DEBUG : Direction Reached
+2021-10-19 20:08:35,771 : DEBUG : Direction Reached
+2021-10-19 20:08:35,788 : DEBUG : Direction Reached
+2021-10-19 20:08:35,804 : DEBUG : Direction Reached
+2021-10-19 20:08:35,820 : DEBUG : Direction Reached
+2021-10-19 20:08:35,836 : DEBUG : Direction Reached
+2021-10-19 20:08:35,852 : DEBUG : Direction Reached
+2021-10-19 20:08:35,868 : DEBUG : Direction Reached
+2021-10-19 20:08:35,884 : DEBUG : Direction Reached
+2021-10-19 20:08:35,900 : DEBUG : Direction Reached
+2021-10-19 20:08:35,917 : DEBUG : Direction Reached
+2021-10-19 20:08:35,934 : DEBUG : Direction Reached
+2021-10-19 20:08:35,951 : DEBUG : Direction Reached
+2021-10-19 20:08:35,968 : DEBUG : Direction Reached
+2021-10-19 20:08:35,984 : DEBUG : Direction Reached
+2021-10-19 20:08:36,000 : DEBUG : Direction Reached
+2021-10-19 20:08:36,016 : DEBUG : Direction Reached
+2021-10-19 20:08:36,032 : DEBUG : Direction Reached
+2021-10-19 20:08:36,049 : DEBUG : Direction Reached
+2021-10-19 20:08:36,066 : DEBUG : Direction Reached
+2021-10-19 20:08:36,082 : DEBUG : Direction Reached
+2021-10-19 20:08:36,100 : DEBUG : Direction Reached
+2021-10-19 20:08:36,114 : DEBUG : Direction Reached
+2021-10-19 20:08:36,132 : DEBUG : Direction Reached
+2021-10-19 20:08:36,147 : DEBUG : Direction Reached
+2021-10-19 20:08:36,164 : DEBUG : Direction Reached
+2021-10-19 20:08:36,181 : DEBUG : Direction Reached
+2021-10-19 20:08:36,199 : DEBUG : Direction Reached
+2021-10-19 20:08:36,214 : DEBUG : Direction Reached
+2021-10-19 20:08:36,231 : DEBUG : Direction Reached
+2021-10-19 20:08:36,248 : DEBUG : Direction Reached
+2021-10-19 20:08:36,263 : DEBUG : Direction Reached
+2021-10-19 20:08:36,280 : DEBUG : Direction Reached
+2021-10-19 20:08:36,296 : DEBUG : Direction Reached
+2021-10-19 20:08:36,311 : DEBUG : Direction Reached
+2021-10-19 20:08:36,328 : DEBUG : Direction Reached
+2021-10-19 20:08:36,346 : DEBUG : Direction Reached
+2021-10-19 20:08:36,360 : DEBUG : Direction Reached
+2021-10-19 20:08:36,378 : DEBUG : Direction Reached
+2021-10-19 20:08:36,393 : DEBUG : Direction Reached
+2021-10-19 20:08:36,410 : DEBUG : Direction Reached
+2021-10-19 20:08:36,426 : DEBUG : Direction Reached
+2021-10-19 20:08:36,442 : DEBUG : Direction Reached
+2021-10-19 20:08:36,460 : DEBUG : Direction Reached
+2021-10-19 20:08:36,475 : DEBUG : Direction Reached
+2021-10-19 20:08:36,490 : DEBUG : Direction Reached
+2021-10-19 20:08:37,132 : DEBUG : Direction Reached
+2021-10-19 20:08:37,899 : DEBUG : Direction Reached
+2021-10-19 20:08:38,471 : DEBUG : Direction Reached
+2021-10-19 20:08:39,090 : DEBUG : Direction Reached
+2021-10-19 20:08:39,912 : DEBUG : Direction Reached
+2021-10-19 20:08:40,602 : DEBUG : Direction Reached
+2021-10-19 20:08:42,055 : DEBUG : Direction Reached
+2021-10-19 20:08:43,032 : DEBUG : Direction Reached
+2021-10-19 20:08:44,491 : DEBUG : Direction Reached
+2021-10-19 20:08:48,359 : DEBUG : Direction Reached
+2021-10-19 20:08:49,114 : DEBUG : Direction Reached
+2021-10-19 20:08:49,712 : DEBUG : Direction Reached
+2021-10-19 20:08:50,282 : DEBUG : Direction Reached
+2021-10-19 20:08:50,845 : DEBUG : Direction Reached
+2021-10-19 20:08:51,417 : DEBUG : Direction Reached
+2021-10-19 20:08:52,065 : DEBUG : Direction Reached
+2021-10-19 20:08:52,645 : DEBUG : Direction Reached
